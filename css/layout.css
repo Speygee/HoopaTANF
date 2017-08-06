@@ -1,0 +1,300 @@
+@charset "utf-8";
+img,object,embed,video {max-width: 100%;}
+.ie6 img {width: 100%;}
+body, html {min-height: 100%; min-width: 400px;}
+
+.split {
+	width: 50%;
+	margin: auto;
+}
+/*************** MOBILE ***************/
+.gridContainer {
+	width: 100%;
+	min-width: 400px;
+	min-height: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/********** HEADER **********/
+.desktop, .tablet {display: none;}
+.mobile {display: inherit;}
+section.mobile {margin-bottom: 5px;padding: 10px 0;}
+section.mobile a {margin: 0 7%; padding: 0;}
+
+
+/********** NAV **********/
+nav#site-menu {
+	display: none;
+	width: 100%;
+	margin: 15px 0;
+	padding: 0;
+}
+nav ul {
+	display: block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+nav ul li {
+	display: block;
+	width: 100%;
+	margin: 5px 0;
+	padding: 0;
+}
+nav ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 10px 0;
+}
+
+
+/********** SEARCH **********/
+div#search-bar {
+	display: none;
+	width: 100%;
+	margin: 15px 0;
+	padding: 0;
+}
+div#search-bar form {padding: 15px 0;}
+div#search-bar input {margin: 5px 0; padding: 5px;}
+#search {width: 90%;}
+
+
+/********** FOOTER **********/
+footer {
+	margin: 0;
+	padding: 10px;
+	clear: both;
+}
+#footer-wave {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+/********** HOME **********/
+#home article header {
+	margin: 0;
+	padding: 0;
+}
+#home article section img {
+	max-width: 340px;
+	border: 2px solid #000;
+	border-radius: 5px;
+	margin: 5px 15px 5px 10px;
+}
+aside {
+	width: 300px;
+	margin: 10px auto;
+	padding: 0;
+}
+
+/********** SERVICES **********/
+#services article header {
+	margin: 0;
+	padding: 0;
+}
+#services article section img {
+	max-width: 340px;
+	border: 2px solid #000;
+	border-radius: 5px;
+	margin: 5px 15px 5px 10px;
+}
+
+/********** CALENDAR **********/
+#calendar section.mobile {
+	width: 90%;
+	min-width: 350px;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/********** FORMS **********/
+
+/********** CONTACT **********/
+#location {
+	display: block;
+	width: 374px;
+	margin: 15px auto;
+	padding: 0;
+	border: 3px solid silver;
+	border-radius: 15px;
+}
+#location img {
+	float: left;
+	margin: 10px;
+	border-radius: 15px;
+}
+#location ul {list-style: none; padding: 0;}
+#location address { margin-bottom: 10px;}
+
+#directory {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#directory li.person {
+	display: block;
+	width: 374px;
+	margin: 15px auto;
+	padding: 0;
+	border: 3px solid silver;
+	border-radius: 5px;
+}
+#directory li img.pic {
+	float: left;
+	margin: 10px;
+	border: 5px solid #07537b;
+	border-radius: 5px;
+	object-fit: cover;
+}
+#directory li div.title {
+	float: left;
+	margin: 0 10px;
+}
+#directory li ul.details {
+	clear: both;
+	list-style: none;
+	padding: 0 8px;
+}
+
+/*************** TABLET ***************/
+@media only screen and (min-width: 800px) {
+	.gridContainer {max-width: 1199px;}
+
+	/********** HEADER **********/
+	.desktop, .mobile {display: none;}
+	.tablet {display: inherit !important;}
+	section.tablet {margin-bottom: 0; padding: 0;}
+	section.tablet a {margin: 0; padding: 0;}
+	section.tablet a img {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+	section.tablet a h1 {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	/********** NAV **********/
+	nav#site-menu {display: inherit !important; margin: 10px 0; background: blue;}
+	nav ul li {
+		float: left;
+		margin: 0;
+		width: 20%;
+		border-bottom: 5px solid #014e77;
+	}
+
+
+	/********** SEARCH **********/
+	#sep {clear: both;}
+
+	div#search-bar {
+		display: inherit !important;
+		width: 80%;
+		max-width: 600px;
+		margin: 35px auto;
+		border-radius: 20px
+	}
+	#search {width: 80%;}
+
+
+	/********** IMG **********/
+	#banner-wave {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
+
+
+	/********** FOOTER **********/
+	/* Nothing Changed from Mobile */
+
+
+	/********** HOME **********/
+	#home {float: left; width: 60%;}
+	aside {
+		float: left;
+		width: 38%;
+		margin: 0 1%;
+		margin-top: 120px;
+	}
+	#home article section img {max-width: 450px;}
+
+
+	/********** SERVICES **********/
+	#services article section img {max-width: 450px;}
+
+	/********** CALENDAR **********/
+
+	/********** FORMS **********/
+
+	/********** CONTACT **********/
+	#directory {width: 800px; margin: 0 auto;}
+	#directory li.person {float: left; margin: 15px 10px;}
+}
+
+
+/*************** DESKTOP ***************/
+@media only screen and (min-width: 1200px) {
+	.gridContainer {max-width: 1300px; min-width: 880px;}
+
+	/********** HEADER **********/
+	.tablet, .mobile {display: none !important;}
+	.desktop {display: inherit !important;}
+	section.desktop {margin-bottom: 0; padding: 0;}
+	section.desktop a {margin: 0; padding: 0;}
+	section.desktop a img {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+	section.desktop a h1 {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+
+
+	/********** NAV **********/
+	/* Nothing Changed from Tablet */
+
+
+	/********** SEARCH **********/
+	div#search-bar {width: 650px;}
+
+
+	/********** IMG **********/
+	/* Nothing Changed from Tablet */
+
+
+	/********** FOOTER **********/
+	/* Nothing Changed from Tablet */
+
+
+	/********** HOME **********/
+	#home {width: 70%;}
+	#home article section img {max-width: 500px;}
+	aside {width: 28%;}
+
+
+	/********** SERVICES **********/
+	#services article section img {max-width: 500px;}
+
+	/********** CALENDAR **********/
+
+	/********** FORMS **********/
+
+	/********** CONTACT **********/
+	#directory {
+		width: 1200px;
+	}
+
+}

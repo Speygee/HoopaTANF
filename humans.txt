@@ -1,0 +1,19 @@
+/* TEAM */
+		Solo Developer: Matthew Chavez
+		Contact: matt@speygee.com
+		From: Hoopa, CA USA
+
+		Graphic Artist: Carissa Williams
+		Contact: rorilyn@carissawilliams.net
+		From: Vancouver, BC Canada
+
+/* SITE */
+		Original Upload: 09/10/2013
+		Last Update: 07/01/2017
+		Language: English
+		Doctype: HTML5
+		IDE: Sublime Text 3, Git, GitHub, Photoshop CS3
+
+/* TECHNOLOGY */
+
+    	HTML5, CSS3, Boilerplate (Normalize.css, jQuery, Modernizr), respond.js
