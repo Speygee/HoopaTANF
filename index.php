@@ -1,21 +1,19 @@
 <?php
+ini_set('display_errors',1); error_reporting(E_ALL);
     require "./include.php";
     include "./para.php";
 
-    if (($connection = mysql_connect(HOST, USER, PASS)) === FALSE)
+    if (($connection = mysqli_connect(HOST, USER, PASS, DB)) === FALSE)
         die("Could not connect to database");
-
-    if (mysql_select_db(DB, $connection) === FALSE)
-        die("Could not select database");
 
     $one = "SELECT * FROM `index` ORDER BY `index`.`id` ASC";
     $two = "SELECT * FROM `gcal`";
 
-    $content = mysql_query($one);
+    $content = mysqli_query($connection, $one);
     if ($content === FALSE)
         die("Could not Query Database");
 
-    $calendar = mysql_query($two);
+    $calendar = mysqli_query($connection, $two);
     if ($calendar === FALSE)
         die("Could not Query Database2");
 
@@ -96,8 +94,8 @@
                     <h2>Home</h2>
                 </header>
                 <?php
-                    if (mysql_num_rows($content)) {
-                        while ($row = mysql_fetch_array($content)) {
+                    if (mysqli_num_rows($content)) {
+                        while ($row = mysqli_fetch_array($content)) {
                             echo "<article><header><h3>$row[title]</h3></header><section>";
                             if ($row['image'] != "NotSet") {
                                 if ($row['position'] == "right") {
@@ -115,8 +113,8 @@
 
             <aside>
                 <?php
-                    if (mysql_num_rows($calendar)) {
-                        $cal = mysql_fetch_array($calendar);
+                    if (mysqli_num_rows($calendar)) {
+                        $cal = mysqli_fetch_array($calendar);
                         echo '<iframe src="https://www.google.com/calendar/embed?title=Agenda&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src='.$cal['calendar-id'].'&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="100%" height="400" frameborder="0" scrolling="no"></iframe>';
                     }
                 ?>
@@ -138,6 +136,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
+	<?php mysqli_close($connection); ?>
     </body>
 </html>

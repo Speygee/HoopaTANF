@@ -1,45 +1,42 @@
 <?php
     require "./include.php";
 
-    if (($connection = mysql_connect(HOST, USER, PASS)) === FALSE)
+    if (($connection = mysqli_connect(HOST, USER, PASS, DB)) === FALSE)
         die("Could not connect to database");
-
-    if (mysql_select_db(DB, $connection) === FALSE)
-        die("Could not select database");
 
     $staff = "SELECT * FROM contact WHERE type=\"staff\" ORDER BY phone ASC";
 
-    $staff_content = mysql_query($staff);
+    $staff_content = mysqli_query($connection, $staff);
     if ($staff_content === FALSE)
         die("Could not Query Database");
 
     $et = "SELECT * FROM contact WHERE type=\"et\"";
 
-    $et_content = mysql_query($et);
+    $et_content = mysqli_query($connection, $et);
     if ($et_content === FALSE)
         die("Could not Query Database");
 
     $family = "SELECT * FROM contact WHERE type=\"family\"";
 
-    $family_content = mysql_query($family);
+    $family_content = mysqli_query($connection, $family);
     if ($family_content === FALSE)
         die("Could not Query Database");
 
     $project = "SELECT * FROM contact WHERE type=\"project\"";
 
-    $project_content = mysql_query($project);
+    $project_content = mysqli_query($connection, $project);
     if ($project_content === FALSE)
         die("Could not Query Database");
 
     $substance = "SELECT * FROM contact WHERE type=\"substance\"";
 
-    $substance_content = mysql_query($substance);
+    $substance_content = mysqli_query($connection, $substance);
     if ($substance_content === FALSE)
         die("Could not Query Database");
 
     $sql2 = "SELECT * FROM `address`";
 
-    $address = mysql_query($sql2);
+    $address = mysqli_query($connection, $sql2);
     if ($address === FALSE)
         die("Could not Query Database");
 
@@ -122,8 +119,8 @@
 
                 <div id="location">
                 <?php
-                    if (mysql_num_rows($address)) {
-                        while ($row = mysql_fetch_array($address)) {
+                    if (mysqli_num_rows($address)) {
+                        while ($row = mysqli_fetch_array($address)) {
                             if ($row['image'] != "") {
                                 echo "<img src='$row[image]' alt='TANF-LOGO' width='120' height='120'>";
                             }
@@ -147,8 +144,8 @@
                 <hr class="split">
                 <ul id="directory">
                 <?php
-                    if (mysql_num_rows($staff_content)) {
-                        while ($person = mysql_fetch_array($staff_content)) {
+                    if (mysqli_num_rows($staff_content)) {
+                        while ($person = mysqli_fetch_array($staff_content)) {
                             echo "<li class='person'>";
                             if ($person['image'] != "") {
                                 echo "<img src='img/contact/$person[image]' alt='$person[image]' class='pic' width='100' height='100'>";
@@ -171,8 +168,8 @@
                 <hr class="split">
                 <ul id="directory">
                 <?php
-                    if (mysql_num_rows($et_content)) {
-                        while ($person = mysql_fetch_array($et_content)) {
+                    if (mysqli_num_rows($et_content)) {
+                        while ($person = mysqli_fetch_array($et_content)) {
                             echo "<li class='person'>";
                             if ($person['image'] != "") {
                                 echo "<img src='img/contact/$person[image]' alt='$person[image]' class='pic' width='100' height='100'>";
@@ -195,8 +192,8 @@
                 <hr class="split">
                 <ul id="directory">
                 <?php
-                    if (mysql_num_rows($family_content)) {
-                        while ($person = mysql_fetch_array($family_content)) {
+                    if (mysqli_num_rows($family_content)) {
+                        while ($person = mysqli_fetch_array($family_content)) {
                             echo "<li class='person'>";
                             if ($person['image'] != "") {
                                 echo "<img src='img/contact/$person[image]' alt='$person[image]' class='pic' width='100' height='100'>";
@@ -219,8 +216,8 @@
                 <hr class="split">
                 <ul id="directory">
                 <?php
-                    if (mysql_num_rows($project_content)) {
-                        while ($person = mysql_fetch_array($project_content)) {
+                    if (mysqli_num_rows($project_content)) {
+                        while ($person = mysqli_fetch_array($project_content)) {
                             echo "<li class='person'>";
                             if ($person['image'] != "") {
                                 echo "<img src='img/contact/$person[image]' alt='$person[image]' class='pic' width='100' height='100'>";
@@ -243,8 +240,8 @@
                 <hr class="split">
                 <ul id="directory">
                 <?php
-                    if (mysql_num_rows($substance_content)) {
-                        while ($person = mysql_fetch_array($substance_content)) {
+                    if (mysqli_num_rows($substance_content)) {
+                        while ($person = mysqli_fetch_array($substance_content)) {
                             echo "<li class='person'>";
                             if ($person['image'] != "") {
                                 echo "<img src='img/contact/$person[image]' alt='$person[image]' class='pic' width='100' height='100'>";

@@ -1,13 +1,8 @@
 <?php
     require "./include.php";
 
-    if (($connection = mysql_connect(HOST, USER, PASS)) === FALSE)
+    if (($connection = mysqli_connect(HOST, USER, PASS, DB)) === FALSE)
         die("Could not connect to database");
-
-    if (mysql_select_db(DB, $connection) === FALSE)
-        die("Could not select database");
-
-
 ?>
 
 <!DOCTYPE html>

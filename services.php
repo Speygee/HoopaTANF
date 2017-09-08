@@ -2,18 +2,15 @@
     require "./include.php";
     include "./para.php";
 
-    if (($connection = mysql_connect(HOST, USER, PASS)) === FALSE)
+    if (($connection = mysqli_connect(HOST, USER, PASS, DB)) === FALSE)
         die("Could not connect to database");
-
-    if (mysql_select_db(DB, $connection) === FALSE)
-        die("Could not select database");
 
     $sql = "SELECT * FROM `services`";
 
-    $content = mysql_query($sql);
+    $content = mysqli_query($connection, $sql);
     if ($content === FALSE)
         die("Could not Query Database");
-    $nav = mysql_query($sql);
+    $nav = mysqli_query($connection, $sql);
     if ($nav === FALSE)
         die("Could not Query Database");
 ?>
@@ -93,20 +90,20 @@
                     <h2 id='list'>Services</h2>
                 </header>
                 <?php
-                    if (mysql_num_rows($nav) >= 3) {
+                    if (mysqli_num_rows($nav) >= 3) {
                         $list = TRUE;
                     }
                     if (isset($list)) {
                         echo "<section><ul><h3>List of Services</h3>";
-                        while($row = mysql_fetch_array($nav)){
+                        while($row = mysqli_fetch_array($nav)){
                             echo "<li><a href='#$row[id]'>$row[header]</a></li>";
                         }
                         echo"</ul></section>";
                     }
                 ?>
                 <?php
-                    if (mysql_num_rows($content)) {
-                        while($row2 = mysql_fetch_array($content)){
+                    if (mysqli_num_rows($content)) {
+                        while($row2 = mysqli_fetch_array($content)){
                             echo "<article><header><h3 id='$row2[id]'>$row2[header]</h3></header><section>";
                             if($row2['image']!="") {
                                 echo "<img src='$row2[image]' alt='Image Error' style='float: left;'>";
