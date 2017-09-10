@@ -3,6 +3,12 @@
 
     if (($connection = mysqli_connect(HOST, USER, PASS, DB)) === FALSE)
         die("Could not connect to database");
+
+        $query = "SELECT * FROM `forms_instance` ORDER BY `FormName` ASC";
+
+        $forms = mysqli_query($connection, $query);
+        if ($forms === FALSE)
+            die("Could not Query Database");
 ?>
 
 <!DOCTYPE html>
@@ -79,104 +85,15 @@
                 <header>
                     <h2>Forms</h2>
                 </header>
-                <?php /*
-                    <ul>
-                    <li class='category'>
-                        <h3>$row[category]</h3>
-                        <ul class='category-item'>
-                            <li><h4>$row[form]</h4></li>
-                            <li class='link'><a href='$row[pdf]'><img src='img/required/PDF.png' alt='PDF'></a></li>
-                            <li class='link'><a href='$row[youtube]'><img src='img/required/youtube_icon.png' alt='YouTube'></a></li>
-                            <li>$row[description]</li>
-                        </ul>
-                    </li>
-                </ul>
-                */ ?>
-                <ul>
-                    <li class="category">
-                        <h3>Category-title</h3>
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-                    </li>
-
-                    <li class="category">
-                        <h3>Category-title</h3>
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-
-                        <ul class="category-item">
-                            <h4>Nec stet vidisse feugait cu</h4>
-                            <a href=""><img src="img/required/PDF.png" alt="PDF"></a>
-                            <a href=""><img src="img/required/youtube_icon.png" alt="YouTube"></a>
-                            <li><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p><p>Oportere disputando est te, vidisse phaedrum in mel. Nam quis admodum concludaturque an, augue incorrupte disputationi ne duo, atqui soluta an sit. Ea mea dolores albucius scripserit, id his consul inimicus complectitur, wisi mediocrem ex cum. Mei te vero iuvaret, cu vel quot cibo persecuti.</p></li>
-                            <ul class="require">
-                                <h5>Requirements for form:</h5>
-                                <li>Must be 18 years old</li>
-                                <li>Must have a child under 2 years of age</li>
-                                <li>Be 10 feet tall</li>
-                            </ul>
-                        </ul>
-                    </li>
-                </ul>
+                <?php
+                    echo "<ul id=\"formsDisplay\">";
+                    if (mysqli_num_rows($forms)) {
+                        while ($row = mysqli_fetch_array($forms)) {
+                            echo "<li><a href='./forms/$row[formPDF]' target='_blank'>$row[formName]</a></li>";
+                        }
+                    }
+                    echo "</ul>";
+                ?>
             </main>
 
             <div id="footer-wave" class="desktop tablet"><img src="img/required/footer_bg.png" alt="footer-wave"></div>
