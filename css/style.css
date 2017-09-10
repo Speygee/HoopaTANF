@@ -2,10 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu);
 
 /*************** TYPOGRAPHY ***************/
-
 /********** ALL **********/
-* {font-family: 'Ubuntu', sans-serif;}
-
+* {font-family: 'Ubuntu', sans-serif; text-rendering: optimizeLegibility;}
 /*** HEADER ***/
 header section a h1 {color: #810000; text-shadow: 0 0 15px #ffffff;}
 header nav ul li a {}
@@ -30,56 +28,35 @@ main header h2 {
 	margin: 0;
 	color: #810000;
 }
-
 /*** FOOTER ***/
 footer {color: #fff; text-align: center;}
-
-
 /********** HOME **********/
 #home article header h3 {
 	color: #810000;
 	clear: both;
 }
 #home article section p {
-	text-indent: 35px;
 	text-align: justify;
+	line-height: 1.5em;
 }
-
-
-
+#home article section ol, #home article section ul {
+	text-align: justify;
+	line-height: 1.5em;
+	width: 85%;
+}
 /********** SERVICES **********/
 #services article header h3 {padding: 15px 35px 0; color: #810000;}
 #services article section h4, #services article section h5 {
-	padding: 0 50px;
 	margin: 0;
 	color: #07537b;
 }
-#services article section p {padding: 0 35px; text-align: justify;}
+#services article section p {padding: 0 35px; text-align: justify; line-height: 1.5em;}
 #services article section p.access {padding: 0 50px; text-align: justify;}
-
-
 /********** CALENDAR **********/
 #calendar article section p {padding: 0 35px; text-align: justify; text-indent: 35px;}
-
-
 /********** FORMS **********/
-#forms ul li {}
-#forms ul li h3 {}
-#forms ul li ul li h4 {}
-#forms ul li ul li {}
-#forms ul li ul li.link {}
-#forms ul li ul li.link a img {}
-
-
 /********** CONTACT **********/
-#contact ul li img {}
-#contact ul li h5 {}
-#contact ul li h6 {}
-#contact ul li ul li {}
-
-
 /*************** STYLE ***************/
-
 /********** ALL **********/
 body {
 	background: linear-gradient(to right, #07537b 0%,#0a9cdf 50%,#07537b 100%)
@@ -87,22 +64,18 @@ body {
 .gridContainer{
 	background: #fff;
 }
-
-
 /********** HEADER **********/
-
 /*** ALL ***/
 header#banner {background: url("../img/required/hoopa-cropped.jpg");}
-
 /*** MOBILE ***/
-#banner section.mobile {background: url("../img/required/black-50.png"); text-align: center;}
+#banner section.mobile {background: rgba(0,0,0,.5); text-align: center;}
 #menu-icon, #search-icon {cursor: pointer;}
-
 /*** TABLET ***/
 section.tablet {text-align: center;}
-section.tablet a {color: #810000;
-	text-decoration: none;}
-
+section.tablet a {
+	color: #810000;
+	text-decoration: none;
+}
 /*** DESKTOP ***/
 section.desktop {
 	text-align: center;
@@ -111,10 +84,7 @@ section.destop a {
 	color: #810000;
 	text-decoration: none;
 }
-
-
 /********** NAV **********/
-
 /*** ALL ***/
 nav ul {text-align: center;}
 nav ul li.active {
@@ -136,12 +106,9 @@ nav ul li a {
 	color: #fff;
 	text-decoration: none;
 }
-
-
 /********** SEARCH **********/
-
 /*** ALL ***/
-div#search-bar {background: url("../img/required/black-50.png");
+div#search-bar {background: rgba(0,0,0,.5);
 	text-align: center;}
 #search {
 	border-radius: 5px;
@@ -155,15 +122,12 @@ div#search-bar {background: url("../img/required/black-50.png");
 	border-radius: 5px;
 	border: 1px solid #fff;
 }
-
-
 /********** FOOTER **********/
-
 /*** ALL ***/
-footer {background: #014e77;
-	text-align: center;}
-
-
+footer {
+	background: #014e77;
+	text-align: center;
+}
 /********** HOME **********/
 #home article header h3 {
 	margin: 0;
@@ -173,15 +137,9 @@ footer {background: #014e77;
 	margin: 5px;
 	padding: 0 15px;
 }
-
-
 /********** SERVICES **********/
-#services article header h3 {}
-#services article section h4 {}
-#services article section p {}
 #services article section .list-link {color: #000;}
-
-#services section ul {
+#services section ul#toc {
 	background: #014e77;
 	border: 2px solid #000;
 	border-radius: 5px;
@@ -195,31 +153,37 @@ footer {background: #014e77;
 	color: #fff;}
 #services section li {margin-left: 45px;}
 #services section li a {color: #fff;}
-
-
-
 /********** CALENDAR **********/
-#calendar article section p {}
 #calendar article section h3 {
 	color: #014e77;
 	text-align: center;
-
 }
-
-
 /********** FORMS **********/
-.link {}
-#forms ul li h3 {}
-#forms ul li ul li h4 {}
-#forms ul li ul li {}
-#forms ul li.category ul .require {}
-
+#forms	ul#formsDisplay {
+	list-style: none;
+	border: 1px solid #07537b;
+	padding: 0;
+	margin: auto;
+}
+#forms	ul#formsDisplay li {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+#forms	ul#formsDisplay li a	{
+	padding: 10px 0 10px 10px;
+	width: 100%;
+	display: block;
+	text-decoration: none;
+	color: #07537b
+}
+#forms	ul#formsDisplay li a:hover	{
+	padding: 10px 0 10px 10px;
+	width: 100%;
+	background-color: #9BBACA;
+	display: block;
+	text-decoration: none;
+	color: #07537b;
+}
 /********** CONTACT **********/
-#location ul h3 {}
-#location ul li {}
 #location address {text-align: center;}
-
-#contact ul li img {}
-#contact ul li h5 {}
-#contact ul li h6 {}
-#contact ul li ul li {}

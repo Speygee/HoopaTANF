@@ -92,6 +92,13 @@ aside {
 }
 
 /********** SERVICES **********/
+#services article section	{
+	width: 100%;
+	margin: auto;
+}
+#services article section h4	{
+	padding-left: 35px;
+}
 #services article header {
 	margin: 0;
 	padding: 0;
@@ -113,7 +120,7 @@ aside {
 }
 
 /********** FORMS **********/
-
+#forms	ul#formsDisplay	{width: 100%; border:1px solid #07537b;}
 /********** CONTACT **********/
 #location {
 	display: block;
@@ -224,17 +231,21 @@ aside {
 		float: left;
 		width: 38%;
 		margin: 0 1%;
-		margin-top: 120px;
+		margin-top: 80px;
 	}
 	#home article section img {max-width: 450px;}
 
 
 	/********** SERVICES **********/
 	#services article section img {max-width: 450px;}
-
+	#services article section	{
+		width: 80%;
+		margin: auto;
+	}
 	/********** CALENDAR **********/
 
 	/********** FORMS **********/
+	#forms	ul#formsDisplay	{width: 80%;}
 
 	/********** CONTACT **********/
 	#directory {width: 800px; margin: 0 auto;}
@@ -281,17 +292,25 @@ aside {
 
 	/********** HOME **********/
 	#home {width: 70%;}
+	#home article section	{
+		width: 80%;
+		margin: auto;
+	}
 	#home article section img {max-width: 500px;}
 	aside {width: 28%;}
 
 
 	/********** SERVICES **********/
 	#services article section img {max-width: 500px;}
+	#services article section	{
+		width: 60%;
+		margin: auto;
+	}
 
 	/********** CALENDAR **********/
 
 	/********** FORMS **********/
-
+	#forms	ul#formsDisplay	{width: 60%;}
 	/********** CONTACT **********/
 	#directory {
 		width: 1200px;
