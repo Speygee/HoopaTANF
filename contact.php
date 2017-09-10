@@ -157,7 +157,7 @@
                             if ($person['fax'] != "") {
                                 echo "<li>Fax: $person[fax]</li>";
                             }
-                            echo "<li>E-mail: $person[email]</li></ul></li>";
+                            echo "<li>E-mail: <a href='mailto:$person[email]'>$person[email]</a></li></ul></li>";
                         }
                     }
                 ?>

@@ -105,7 +105,7 @@ ini_set('display_errors',1); error_reporting(E_ALL);
                                     echo "<img src='$row[image]' alt='Picture Error' style='float: left;'>";
                             }
                             $row['content'] = wpautop($row['content']);
-                            echo "$row[content]<br id='sep'></section></article>";
+                            echo "$row[content]<br id='sep'></section></article><br><hr style=\"width: 50%; margin: auto;\"><br>";
                         }
                     }
                 ?>

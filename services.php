@@ -94,7 +94,7 @@
                         $list = TRUE;
                     }
                     if (isset($list)) {
-                        echo "<section><ul><h3>List of Services</h3>";
+                        echo "<section><ul id=\"toc\"><h3>List of Services</h3>";
                         while($row = mysqli_fetch_array($nav)){
                             echo "<li><a href='#$row[id]'>$row[header]</a></li>";
                         }
